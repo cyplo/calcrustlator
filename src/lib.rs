@@ -1,5 +1,5 @@
 pub struct Calcrustlator {
-    pub result: i32
+    result: i32
 }
 
 impl Calcrustlator {
@@ -7,5 +7,9 @@ impl Calcrustlator {
         Calcrustlator{
             result: 0
         }
+    }
+
+    pub fn result(&self) -> i32 {
+        self.result
     }
 }

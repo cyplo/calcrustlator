@@ -9,6 +9,6 @@ mod calcrustlator_must {
     fn add() {
         let input = "2 + 2";
         let calcrustlator = Calcrustlator::with_expression(input);
-        assert_eq!(calcrustlator.result, 4);
+        assert_eq!(calcrustlator.result(), 4);
     }
 }
