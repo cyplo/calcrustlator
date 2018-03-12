@@ -17,7 +17,7 @@ pub trait Parser<'a> {
 pub struct SimpleParser;
 impl<'a> Parser<'a> for SimpleParser {
     fn parse(&self, expression: &'a str) -> Expression {
-        unimplemented!()
+        Expression::default()
     }
 }
 
