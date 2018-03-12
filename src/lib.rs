@@ -22,7 +22,8 @@ impl<'a> Parser<'a> for SimpleParser {
 }
 
 impl Calcrustlator {
-    pub fn with_expression_and_parser<'a>(expression: &str, parser: &Parser) -> Self {
+    pub fn with_expression_and_parser<'a>(expression: &'a str, parser: &Parser<'a>) -> Self {
+        parser.parse(expression);
         Calcrustlator{
             result: 0
         }
