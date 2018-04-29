@@ -2,6 +2,10 @@
 #[macro_use]
 extern crate double;
 
+mod parser;
+use parser::Parser;
+use parser::SimpleParser;
+
 pub struct Calcrustlator {
     result: i32
 }
@@ -9,20 +13,14 @@ pub struct Calcrustlator {
 #[derive(Copy, Clone, Debug, Default)]
 pub struct Expression;
 
-pub trait Parser<'a> {
-    fn parse(&self, expression: &'a str) -> Expression;
-}
-
-#[derive(Default)]
-pub struct SimpleParser;
-impl<'a> Parser<'a> for SimpleParser {
-    fn parse(&self, expression: &'a str) -> Expression {
-        Expression::default()
-    }
-}
-
 impl Calcrustlator {
-    pub fn with_expression_and_parser<'a>(expression: &'a str, parser: &Parser<'a>) -> Self {
+
+    pub fn with_expression<'a>(expression: &'a str) -> Self {
+        let parser = SimpleParser::default();
+        Calcrustlator::with_expression_and_parser(expression, &parser)
+    }
+
+    fn with_expression_and_parser<'a>(expression: &'a str, parser: &Parser<'a>) -> Self {
         parser.parse(expression);
         Calcrustlator{
             result: 0
