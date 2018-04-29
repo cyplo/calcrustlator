@@ -2,6 +2,8 @@ extern crate calcrustlator;
 
 use calcrustlator::*;
 
+
+// design starts here
 #[test]
 fn addition() {
     let input = "2 + 2";

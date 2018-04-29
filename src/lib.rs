@@ -15,6 +15,7 @@ pub struct Expression;
 
 impl Calcrustlator {
 
+    // hard to test with unit test, tested using feature test
     pub fn with_expression<'a>(expression: &'a str) -> Self {
         let parser = SimpleParser::default();
         Calcrustlator::with_expression_and_parser(expression, &parser)
@@ -37,6 +38,7 @@ mod must {
 
     use super::*;
 
+    // design follows through here
     #[test]
     fn pass_expression_to_parser() {
         let input = "2 + 2";

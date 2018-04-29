@@ -11,3 +11,12 @@ impl<'a> Parser<'a> for SimpleParser {
         Expression::default()
     }
 }
+
+#[cfg(test)]
+mod must {
+
+
+    #[test]
+    fn fail_on_empty_expression
+
+}
